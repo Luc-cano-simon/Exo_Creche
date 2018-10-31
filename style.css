@@ -1,0 +1,17 @@
+.Titre
+{
+	text-align: center;
+}
+
+.add
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	margin: 3em 1.5em 3em 1.5em;
+	border-radius:0.5em;
+	background-color: #E8E6E5
+
+}
