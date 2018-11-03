@@ -23,11 +23,11 @@
       <a class="navbar-brand" href="">Creche</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="http://localhost/creche">Accueil</a></li>
+      <li><a href="http://localhost/creche">Accueil</a></li>
       <li><a href="">Enfant</a></li>
       <li><a href="http://localhost/creche/activites.php">Activités</a></li>
-      <li><a href="http://localhost/creche/AddFicheenfant.php">Ajouter une fiche enfant </a></li>
-      <li><a href="AddActivites.php">Ajouter une Activité </a></li>
+      <li><a href="http://localhost/creche/AddFicheEnfant.php">Ajouter une fiche enfant </a></li>
+      <li class="active"><a href="http://localhost/creche/AddActivites.php">Ajouter une Activité </a></li>
     </ul>
   </div>
 </nav>

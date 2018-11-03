@@ -26,7 +26,7 @@
       <li class=""><a href="http://localhost/creche">Accueil</a></li>
       <li class="active"><a  href="">Enfant</a></li>
       <li><a href="http://localhost/creche/activites.php">Activités</a></li>
-      <li><a href="http://localhost/creche/AddFicheenfant.php">Ajouter une fiche enfant </a></li>
+      <li><a href="http://localhost/creche/AddFicheEnfant.php">Ajouter une fiche enfant </a></li>
       <li><a href="#">Ajouter une Activité </a></li>
     </ul>
   </div>
@@ -36,6 +36,10 @@
 
 <?php 
 
+ini_set('display_errors', 1);
+
+require("deleteE.php");
+require("modifyE.php");
 	
 	try
 	{
@@ -60,23 +64,44 @@
 		<th>Adresse</th>
 		<th>Contact des Parents</th>
 		<th>Remarques</th>
-		<th>Option</th>
-		<th>Option2</th>
+		<!-- <th>Option</th> -->
+		<!-- <th>Option2</th> -->
 	</thead>
+ :
 
-	<?php 
-	$reponse = $bdd->query('SELECT * FROM children');
-		while($donnees=$reponse->fetch())
-		{
-			echo 
-			'<tr>
-			<td>' . $donnees['children_lastname'] . '</td><td>' . $donnees['children_firstname'] . '</td><td>' . $donnees['children_birthday'] . '</td><td>' . $donnees['children_adress'] . '</td><td>' . $donnees['children_parents_contact'] . '</td><td>' . $donnees['children_remarks'] . '</td>
-			<td><button>Suppprimer</button></td>
-			
-			
-			</tr>';
-		}
-	?>
+<?php
+
+
+
+	$reponse = $bdd->query('SELECT * FROM children ORDER BY children_lastname ASC');
+    while($donnees=$reponse->fetch())
+    {
+       echo
+       '<tr>
+          <td>' . $donnees['children_lastname'] . '</td>
+          <td>' . $donnees['children_firstname'] . '</td>
+          <td>' . $donnees['children_birthday'] . '</td>
+          <td>' . $donnees['children_adress'] . '</td>
+          <td>' . $donnees['children_parents_contact'] . '</td>
+          <td>' . $donnees['children_remarks'] . '</td>
+          <td>
+             <form method="post" class="deleteform">
+                <input type="hidden" name="children_id" value="'. $donnees['children_id'] . '">
+                <input type="submit" name="supprimer" class="delete" value="supprimer">
+             </form>
+          </td>
+          <td>
+             <form method="post" class="">
+                <input type="hidden" name="children_id" value="'. $donnees['children_id'] . '">
+                <input type="submit" name="modifier" class="modify" value="Modifier">
+             </form>
+          </td>
+       </tr>';
+    }
+
+
+?>
+
 
 
 

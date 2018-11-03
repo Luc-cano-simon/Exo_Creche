@@ -27,7 +27,7 @@
       <li><a href="http://localhost/creche/enfant.php">Enfant</a></li>
       <li><a href="http://localhost/creche/activites.php">Activités</a></li>
       <li><a href="http://localhost/creche/AddFicheEnfant.php">Ajouter une fiche enfant </a></li>
-      <li><a href="AddActivites.php">Ajouter une Activité </a></li>
+      <li><a href="http://localhost/creche/AddActivites.php">Ajouter une Activité </a></li>
     </ul>
   </div>
 </nav>
@@ -35,6 +35,7 @@
 
 
 <?php 
+
 
 	
 	try
@@ -60,7 +61,7 @@
 	</thead>
 
 	<?php 
-	$reponse = $bdd->query('SELECT * FROM children');
+	$reponse = $bdd->query('SELECT * FROM children ORDER BY children_lastname ASC');
 		while($donnees=$reponse->fetch())
 		{
 			echo 

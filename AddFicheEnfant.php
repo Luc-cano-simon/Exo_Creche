@@ -24,7 +24,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class=""><a href="http://localhost/creche">Accueil</a></li>
-      <li><a href="">Enfant</a></li>
+      <li><a href="enfant.php">Enfant</a></li>
       <li><a href="http://localhost/creche/activites.php">Activités</a></li>
       <li class="active"><a href="http://localhost/creche/AddFicheEnfant.php">Ajouter une fiche enfant </a></li>
       <li><a href="AddActivites.php">Ajouter une Activité </a></li>
@@ -65,9 +65,9 @@ try
     $children_parents_contact  = $_POST['children_parents_contact'];
     $children_remarks = $_POST['children_remarks'];
 
-
-
   }
+
+
 
 
 
@@ -83,10 +83,6 @@ try
     // var_dump($children_remarks);
 
 ?>
-
-
-
-
 
 
 <form method="POST" class="add">
