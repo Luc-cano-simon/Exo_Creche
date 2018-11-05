@@ -35,6 +35,7 @@
 
 
 <?php 
+// require("info+enfant.php");
 
 
 	
@@ -66,7 +67,12 @@
 		{
 			echo 
 			'<tr>
-			<td>' . $donnees['children_lastname'] . '</td><td>' . $donnees['children_firstname'] . '</td><td><a href="">+ info</a></td>
+			<td>' . $donnees['children_lastname'] . '</td><td>' . $donnees['children_firstname'] . '</td>
+			<td>
+			<form method="post" action="info+Enfant.php" class="fichePerso">
+                <input type="hidden" name="child_id" value' . $donnees['children_id'] .' >
+                <input type="submit" name="info" class="info" value="+ info">
+            </form>
 			</tr>';
 		}
 	?>

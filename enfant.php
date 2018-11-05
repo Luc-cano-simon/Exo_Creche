@@ -43,7 +43,7 @@ require("modifyE.php");
 	
 	try
 	{
-
+    $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 		$bdd = new PDO('mysql:host=localhost;dbname=creche;charset=utf8','luc', 'lucho1803');
 	}
 
@@ -78,6 +78,7 @@ require("modifyE.php");
     {
        echo
        '<tr>
+       
           <td>' . $donnees['children_lastname'] . '</td>
           <td>' . $donnees['children_firstname'] . '</td>
           <td>' . $donnees['children_birthday'] . '</td>
@@ -91,14 +92,14 @@ require("modifyE.php");
              </form>
           </td>
           <td>
-             <form method="post" class="">
+             <form method="post" action="modifyE.php">
                 <input type="hidden" name="children_id" value="'. $donnees['children_id'] . '">
                 <input type="submit" name="modifier" class="modify" value="Modifier">
              </form>
           </td>
        </tr>';
     }
-
+     
 
 ?>
 
